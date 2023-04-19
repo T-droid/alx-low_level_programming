@@ -1,4 +1,10 @@
+#ifndef STDDEF_H_INCLUDED
+#define STDDEF_H_INCLUDED
+
 #include <stddef.h>
+
+#endif
+
 #ifndef FUNCTION_POINTERS_H
 #define FUNCTION_POINTERS_H
 
