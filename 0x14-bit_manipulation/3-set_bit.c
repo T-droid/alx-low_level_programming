@@ -12,7 +12,7 @@ int set_bit(unsigned long int *n, unsigned int index)
 
 	trev <<= index;
 	if (n == NULL)
-		return (-10);
+		return (-1);
 	*n |= trev;
 	return (1);
 }
