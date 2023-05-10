@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
-#include <unistd.h>
+
 /**
  * read_textfile - reads file and prints it to standard output
  * @filename: filename
@@ -39,6 +39,6 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	close(fd);
 
-	printf("%s", buf);
+	free(buf);
 	return (rd);
 }
