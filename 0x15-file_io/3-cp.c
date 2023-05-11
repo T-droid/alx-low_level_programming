@@ -73,7 +73,7 @@ void copy_file(const char *file_from, const char *file_to)
 	}
 	else
 	{
-		fd = open(file_to, O_WRONLY);
+		fd = open(file_to, O_WRONLY |  O_TRUNC);
 		if (fd == -1)
 		{
 			dprintf(2, "Error: Can't write to %s\n", file_to);
