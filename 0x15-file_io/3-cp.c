@@ -11,7 +11,7 @@ void copy_file(const char *file_from, const char *file_to);
  * main - entry point
  *
  * @argc: counts the number of arguments
- * @argv: holds the string of the arguments
+ * @av: holds the string of the arguments
  * Return: always 0
  */
 int main(int argc, char **av)
