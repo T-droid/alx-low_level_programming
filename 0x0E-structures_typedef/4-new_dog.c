@@ -1,6 +1,6 @@
 #include "dog.h"
+#include <stdlib.h>
 
-dog_t tindi;
 /**
  * new_dog - creates a new dog data type
  * @name: name of the new dog
@@ -10,9 +10,14 @@ dog_t tindi;
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	tindi.name = name;
-	tindi.age = age;
-	tindi.owner = owner;
+	dog_t *tindi = malloc(sizeof(dog_t));
 
-	return (&tindi);
+	if (tindi == NULL)
+		return (NULL);
+
+	tindi->name = name;
+	tindi->age = age;
+	tindi->owner = owner;
+
+	return (tindi);
 }
