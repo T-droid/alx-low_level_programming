@@ -42,7 +42,7 @@ void print_all(const char * const format, ...)
 			default:
 				break;
 		}
-		if ((*ip == 'c' || *ip == 'i' || *ip == 'f' || *ip =='s') && *(ptr + 1) != '\0')
+		if ((*ip == 'c' || *ip == 'i' || *ip == 'f' || *ip == 's') && *(ptr + 1) != '\0')
 			printf(", ");
 		ip++;
 	}
