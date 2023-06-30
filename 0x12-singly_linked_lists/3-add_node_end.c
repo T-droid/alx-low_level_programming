@@ -1,14 +1,14 @@
 #include "lists.h"
 
 /**
- * add_node - adds node at the beginning
+ * add_node_end - adds node at the end of a list
  * @head: double pointer to head
  * @str: string value element
- * Return: new head pointer
+ * Return: addres of the new element
  */
-list_t *add_node(list_t **head, const char *str)
+list_t *add_node_end(list_t **head, const char *str)
 {
-	list_t *ptr;
+	list_t *ptr, *p;
 
 	ptr = malloc(sizeof(list_t));
 	if (ptr == NULL)
@@ -17,10 +17,17 @@ list_t *add_node(list_t **head, const char *str)
 	ptr->len = _strlen(ptr->str);
 	ptr->next = NULL;
 
-	if (*head != NULL)
-		ptr->next = *head;
-	*head = ptr;
-	return (*head);
+	if (*head == NULL)
+		*head = ptr;
+	else
+	{
+		p = *head;
+		while (p->next)
+			p = p->next;
+		p->next = ptr;
+	}
+
+	return (ptr);
 }
 
 /**
