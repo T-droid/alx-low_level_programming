@@ -10,6 +10,7 @@ int create_file(const char *filename, char *text_content)
 {
 	int acc, fd;
 	ssize_t wrbyts;
+	size_t length = 0;
 
 	if (filename == NULL)
 		return (-1);
@@ -22,14 +23,16 @@ int create_file(const char *filename, char *text_content)
 	}
 	else
 	{
-		fd = open(filename, O_WRONLY | O_CREAT, 600);
+		fd = open(filename, O_WRONLY | O_CREAT, 0600);
 		if (fd == -1)
 			return (-1);
 	}
 
 	if (text_content != NULL)
 	{
-		wrbyts = write(fd, text_content, sizeof(text_content));
+		while (text_content[length] != '\0')
+			length++;
+		wrbyts = write(fd, text_content, length);
 		if (wrbyts == -1)
 		{
 			close(fd);
